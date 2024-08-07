@@ -1,0 +1,99 @@
+#root {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: auto;
+  background: linear-gradient(225deg, blue, pink);
+}
+
+#root h1 {
+  color: white;
+  transition: all 0.5s ease-in-out;
+
+  @media screen and (max-width: 800px) {
+    font-size: 2rem;
+  }
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  margin-top: 2rem;
+  margin: auto;
+  grid-template-columns: repeat(4, 6rem);
+  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 24rem;
+  transition: all 0.5s ease-in-out;
+
+  @media screen and (max-width: 500px) {
+    grid-template-columns: repeat(4, 4rem);
+    width: 16rem;
+  }
+}
+
+.calculator-grid button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 0;
+
+  transition: font-size 0.5s ease-in-out;
+
+  &:hover, &:focus {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 1rem;
+  }
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 0.75rem;
+  word-wrap: break-word;
+  word-break: break-all;
+  transition: all 0.5s ease-in-out;
+
+  @media screen and (max-width: 500px) {
+    padding: 0.25rem;
+  }
+}
+
+.output, .previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+
+  @media screen and (max-width: 500px) {
+    font-size: 1rem;
+  }
+}
+
+.output, .current-operand {
+  color: white;
+  font-size: 2.5rem;
+
+  @media screen and (max-width: 500px) {
+    font-size: 2rem;
+  }
+}
